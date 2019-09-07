@@ -9,11 +9,11 @@ import "openzeppelin-solidity/contracts/math/safeMath.sol";
 
 // TODO:
 // [X] Set the fee account
-// [] Deposit Ether
+// [X] Deposit Ether
 // [] Withdraw Ether
-// [] Deposit tokens
+// [X] Deposit tokens
 // [] Withdraw tokens
-// [] Check balances
+// [X] Check balances
 // [] Make order
 // [] Cancel order
 // [] Fill order
@@ -22,10 +22,10 @@ import "openzeppelin-solidity/contracts/math/safeMath.sol";
 contract Exchange {
   using SafeMath for uint;
   //variables
-  address public feeAccount; //the account that receives exchange fees
-  uint public feePercent; //the fee percentage
-  address constant ETHER = address(0); //store ether in tokens mapping with blank address
-  //token-address, user-address, balance
+  address public feeAccount;            //the account that receives exchange fees
+  uint public feePercent;               //the fee percentage
+  address constant ETHER = address(0);  //store ether in tokens mapping with blank address
+  /** (token-address => (user-address => balance)) */
   mapping(address => mapping(address => uint)) public tokens;
 
   //Events
@@ -34,6 +34,11 @@ contract Exchange {
   constructor (address _feeAccount, uint _feePercent) public {
     feeAccount = _feeAccount;
     feePercent = _feePercent;
+  }
+
+  //Fallback: reverts if Ether is sent to this smart contract address directily by mistake
+  function() external {
+    revert('revert ether');
   }
 
   function depositEther() public payable {
