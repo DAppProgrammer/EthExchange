@@ -16,6 +16,7 @@ pragma solidity ^0.5.0;
 // [] Fill order
 // [] Charge fees
 
+// TEST
 
 
 contract Exchange {
