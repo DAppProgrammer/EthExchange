@@ -18983,12 +18983,12 @@
         }
       },
       "links": {},
-      "address": "0x10254C567219A3a23B0813B42251C8Be559F7Afe",
-      "transactionHash": "0x2ebd307be2ce8e39c5474015377d2b34c926aae24b5998d8a9296b0efb2f9bf0"
+      "address": "0xC6C55e16AE5ef9f2EcbF15fe727b14474DC989F8",
+      "transactionHash": "0x95019b075cf42f7fde412de819a00a57895479707d0a03fc1703ddb8c4c2a3ff"
     }
   },
   "schemaVersion": "3.0.14",
-  "updatedAt": "2019-09-10T06:26:43.391Z",
+  "updatedAt": "2019-09-12T15:51:59.015Z",
   "devdoc": {
     "methods": {}
   },
